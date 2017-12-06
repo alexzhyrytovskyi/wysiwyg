@@ -1,7 +1,3 @@
-var BASE_URL;
-var UTC_DATE;
-var TIME_ZONE;
-
 function isSet(variable) {
 	return (typeof variable != 'undefined' && variable !== null);
 }
