@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8"/>
+
+	<title>WYSIWYG</title>
+	
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	
+	<!-- Styles -->
+	<link rel="stylesheet" type="text/css" href="css/common.css"/>
+	<link rel="stylesheet" type="text/css" href="css/main.css"/>
+	<link rel="stylesheet" type="text/css" href="css/wysiwyg.css"/>
+	<!-- END OF: Styles -->
+
+	<!-- Scripts -->
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/common.js"></script>
+	<script type="text/javascript" src="js/color-space.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript" src="js/wysiwyg.js"></script>
+	<!-- END OF: Scripts -->
+</head>
+
+<body>
+
+	<!----------------------------------------------------------------------------------------------------------------------
+		UI Templates
+	----------------------------------------------------------------------------------------------------------------------->
+	<div class="ui-templates hidden">
+
+		<!-- UIScrollBox -->
+		<div class="ui-scroll-box-content"></div>
+
+		<div class="ui-scroll-box-horizontal-scroll-rail">
+			<div class="ui-scroll-box-horizontal-scroll-bar"></div>
+		</div>
+
+		<div class="ui-scroll-box-vertical-scroll-rail">
+			<div class="ui-scroll-box-vertical-scroll-bar"></div>
+		</div>
+
+		<div class="ui-scroll-box-drag-overlay"></div>
+		<!-- END OF: UIScrollBox -->
+		
+		<!-- UITextArea -->
+		<div class="ui-text-area">
+			<div class="ui-text-area-top-panel">
+				<div class="ui-text-area-info-label"></div>
+				<div class="ui-text-area-label"></div>
+			</div>
+			<div class="ui-text-area-element-container">
+				<textarea class="ui-text-area-element"></textarea>
+			</div>
+		</div>
+		<!-- END OF: UITextArea -->
+		
+		<!-- UIInputBox -->
+		<div class="ui-input-box">
+			<div class="ui-input-box-top-panel">
+				<div class="ui-input-box-info-label"></div>
+				<div class="ui-input-box-label"></div>
+			</div>
+			<div class="ui-input-box-container">
+				<input class="ui-input-box-element" type="text" />
+			</div>
+			<div class="ui-input-box-bottom-panel">
+				<div class="ui-input-box-comment"></div>
+				<div class="ui-input-box-info-comment"></div>
+			</div>
+		</div>
+		<!-- END OF: UIInputBox -->
+		
+		<!-- UI Dialog -->
+		<div class="ui-dialog-wrapper">
+			<input class="ui-dialog-hidden-input-box"/>
+			<div class="ui-dialog-window">
+				<div class="ui-dialog-container">
+					<div class="ui-dialog-title"></div>
+					<div class="ui-dialog-content"></div>
+				</div>
+				<div class="ui-dialog-buttons-panel"></div>
+			</div>
+		</div>
+		<div class="ui-dialog-action-button ui-blue-button"></div>
+		<div class="ui-dialog-action-link ui-gray-text-button"></div>
+		<!-- END OF: UI Dialog -->
+		
+		<!-- UIErrorTooltip -->
+		<div class="ui-error-tooltip">
+			<div class="ui-error-tooltip-content"></div>
+			<div class="ui-error-tooltip-arrow"></div>
+		</div>
+		<!-- END OF: UIErrorTooltip -->
+
+		<!-- UIColorDialog -->
+		<div class="ui-color-dialog non-selectable">
+			<div class="ui-color-dialog-background-overlay"></div>
+			<div class="ui-color-dialog-drag-overlay"></div>
+			<div class="ui-color-dialog-window">
+				<div class="ui-color-dialog-color-section">
+					<div class="ui-color-dialog-hues">
+						<i></i>
+					</div>
+					<div class="ui-color-dialog-picker-box">
+						<i></i>
+					</div>
+					<div class="ui-color-dialog-opacity-line">
+						<i></i>
+					</div>
+				</div>
+				<div class="ui-color-dialog-value-section">
+					<div class="ui-color-dialog-mode-switch selected" data-mode="hex">
+						HEX
+					</div>
+					<div class="ui-color-dialog-mode-switch" data-mode="rgb">
+						RGB
+					</div>
+					<div class="ui-color-dialog-input-box">
+						<input type="text" spellcheck="false" />
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- END OF: UIColorDialog -->
+
+		<!-- UITooltipPanel -->
+		<div class="ui-tooltip-panel">
+			<div class="ui-tooltip-panel-content"></div>
+			<div class="ui-tooltip-panel-arrow"></div>
+		</div>
+		<!-- END OF: UITooltipPanel -->
+
+		<!-- UICustomTooltipPanel -->
+		<div class="ui-custom-tooltip-panel"></div>
+
+		<div class="ui-custom-tooltip-panel-group"></div>
+
+		<div class="ui-custom-tooltip-panel-button"></div>
+		<!-- END OF: UICustomTooltipPanel -->
+
+		<!-- UICustomTooltipPanelSelectBox -->
+		<div class="ui-custom-tooltip-panel-select-box non-selectable"></div>
+
+		<div class="ui-custom-tooltip-panel-select-box-popup ui-popup">
+			<div class="ui-custom-tooltip-panel-select-box-popup-list"></div>
+		</div>
+		<!-- END OF: UICustomTooltipPanelSelectBox -->
+
+		<!-- UICustomTooltipPanelColorBox -->
+		<div class="ui-custom-tooltip-panel-color-box">
+			<div class="ui-custom-tooltip-panel-color-box-color"></div>
+		</div>
+		<!-- END OF: UICustomTooltipPanelColorBox -->
+		
+		<!-- UIHintWindow -->
+		<div class="ui-hint-window">
+			<span></span>
+			<div class="ui-hint-window-helper-element"></div>
+		</div>
+		<!-- END OF: UIHintWindow -->
+	</div>
+	<!----------------------------------------------------------------------------------------------------------------------
+		END OF: UI Templates
+	----------------------------------------------------------------------------------------------------------------------->
+
+	<div class="wysiwyg0-templates hidden">
+		<!------------------------------------------------------------------------------------------------------------------
+			WYSIWYG
+		------------------------------------------------------------------------------------------------------------------->
+
+		<!-- WYSIWYG > Image Component -->
+		<div class="wysiwyg0-image-component">
+			<img class="wysiwyg0-image-component-image" src="" />
+		</div>
+		<!-- END OF: WYSIWYG > Image Component -->
+
+		<!-- WYSIWYG > Variable Component -->
+		<div class="wysiwyg0-variable-component"></div>
+		<!-- END OF: WYSIWYG > Variable Component -->
+
+		<!-- WYSIWYG > List Component -->
+		<div class="wysiwyg0-list-component wysiwyg0-list-component-with-unordered-list">
+			<div class="wysiwyg0-list-component-content"></div>
+		</div>
+		<!-- END OF: WYSIWYG > List Component -->
+
+		<!-- WYSIWYG > Caret -->
+		<div class="wysiwyg0-caret">
+			<div class="wysiwyg0-caret-line"></div>
+			<div class="wysiwyg0-caret-keyboard-api">
+				<textarea data-disable-ui ></textarea>
+			</div>
+		</div>
+		<!-- END OF: WYSIWYG > Caret -->
+
+		<!-- WYSIWYG -->
+		<div class="wysiwyg0">
+			<div class="wysiwyg0-placeholder"></div>
+			<div class="wysiwyg0-content-box non-selectable"></div>
+			<div class="wysiwyg0-caret-box"></div>
+		</div>
+		<!-- END OF: WYSIWYG -->
+
+		<!-- WYSIWYG > Context Menu -->
+		<div class="wysiwyg0-context-menu non-selectable">
+			<div class="wysiwyg0-context-menu-list">
+				<span data-action-name="cut">Cut</span>
+				<span data-action-name="copy">Copy</span>
+				<span data-action-name="paste">Paste</span>
+			</div>
+			<div class="wysiwyg0-context-menu-undo-redo-buttons">
+				<div class="wysiwyg0-context-menu-undo-button"></div>
+				<div class="wysiwyg0-context-menu-redo-button"></div>
+			</div>
+		</div>
+		<!-- END OF: WYSIWYG > Context Menu -->
+
+		<!-- WYSIWYG > Paste Dialog -->
+		<div class="wysiwyg0-paste-dialog-content">
+			<div class="wysiwyg0-paste-dialog-text-area"></div>
+		</div>
+		<!-- END OF: WYSIWYG > Paste Dialog -->
+
+		<!------------------------------------------------------------------------------------------------------------------
+			END OF: WYSIWYG
+		------------------------------------------------------------------------------------------------------------------->
+
+		<!------------------------------------------------------------------------------------------------------------------
+			UIWhiteWYSIWYG
+		------------------------------------------------------------------------------------------------------------------->
+
+		<!-- UIWhiteWYSIWYG -->
+		<div class="ui-white-wysiwyg">
+			<div class="ui-white-wysiwyg-toolbar non-selectable">
+				<div class="ui-white-wysiwyg-toolbar-content">
+					<div class="ui-white-wysiwyg-bold-button ui-white-wysiwyg-button" data-ui-hint="Bold"></div>
+					<div class="ui-white-wysiwyg-italic-button ui-white-wysiwyg-button" data-ui-hint="Italic"></div>
+					<div class="ui-white-wysiwyg-underline-button ui-white-wysiwyg-button" data-ui-hint="Underline"></div>
+					<div class="ui-white-wysiwyg-set-link-button ui-white-wysiwyg-button ui-disabled" data-ui-hint="Set link"></div>
+					<div class="ui-white-wysiwyg-remove-link-button ui-white-wysiwyg-button ui-disabled" data-ui-hint="Remove link"></div>
+					<div class="ui-white-wysiwyg-align-center-button ui-white-wysiwyg-align-button ui-white-wysiwyg-button" data-tag="center" data-ui-hint="Justify: center"></div>
+					<div class="ui-white-wysiwyg-align-left-button ui-white-wysiwyg-align-button ui-white-wysiwyg-button selected" data-tag="left" data-ui-hint="Justify: left"></div>
+					<div class="ui-white-wysiwyg-align-right-button ui-white-wysiwyg-align-button ui-white-wysiwyg-button" data-tag="right" data-ui-hint="Justify: right"></div>
+					<div class="ui-white-wysiwyg-align-justify-button ui-white-wysiwyg-align-button ui-white-wysiwyg-button" data-tag="justify" data-ui-hint="Justify: full width"></div>
+					<div class="ui-white-wysiwyg-ordered-list-button ui-white-wysiwyg-button" data-ui-hint="Ordered list"></div>
+					<div class="ui-white-wysiwyg-unordered-list-button ui-white-wysiwyg-button" data-ui-hint="Unordered list"></div>
+					<div class="ui-white-wysiwyg-clear-formatting-button ui-white-wysiwyg-button ui-disabled" data-ui-hint="Clear formatting"></div>
+					<div class="ui-white-wysiwyg-predefined-styles-select-box" data-ui-hint="Styles"></div>
+					<div class="ui-white-wysiwyg-font-name-select-box" data-ui-hint="Font"></div>
+					<div class="ui-white-wysiwyg-font-size-select-box" data-ui-hint="Size"></div>
+					<div class="ui-white-wysiwyg-text-color-button ui-white-wysiwyg-button" data-ui-hint="Color">
+						<div class="ui-white-wysiwyg-text-color-button-color-bar" style="background-color: red"></div>
+					</div>
+					<div class="ui-white-wysiwyg-undo-button ui-white-wysiwyg-button ui-disabled" data-ui-hint="Undo"></div>
+					<div class="ui-white-wysiwyg-redo-button ui-white-wysiwyg-button ui-disabled" data-ui-hint="Redo"></div>
+					<div class="ui-white-wysiwyg-variables-select-box" data-ui-hint="Variables"></div>
+				</div>
+			</div>
+			<div class="ui-white-wysiwyg-content"></div>
+		</div>
+		<!-- END OF: UIWhiteWYSIWYG -->
+
+		<!-- UIWhiteWYSIWYG > Select Box -->
+		<div class="ui-white-wysiwyg-select-box"></div>
+		<div class="ui-white-wysiwyg-select-box-popup">
+			<div class="ui-white-wysiwyg-select-box-popup-list"></div>
+		</div>
+		<!-- END OF: UIWhiteWYSIWYG > Select Box -->
+
+		<!-- UIWhiteWYSIWYG > Edit Link Dialog -->
+		<div class="ui-white-wysiwyg-edit-link-dialog">
+			<div class="ui-white-wysiwyg-edit-link-dialog-input-box"></div>
+		</div>
+		<!-- END OF: UIWhiteWYSIWYG > Edit Link Dialog -->
+
+		<!------------------------------------------------------------------------------------------------------------------
+			END OF: UIWhiteWYSIWYG
+		------------------------------------------------------------------------------------------------------------------->
+	</div>
+
+	<style style type="text/css">
+		body {
+			background-color: #ffffff;
+		}
+		.components-page-white-wysiwyg {
+			background-color: #ffffff;
+			max-width: 600px;
+		}
+		h3 {
+			padding: 0;
+			margin: 24px 0 8px 0;
+		}
+	</style>
+	
+	<div style="padding: 50px">
+		<h1>WYSIWYG</h1>
+		Author: Alex Zhyrytovskyi<br>
+		Created: 10/31/2016<br>
+		Modified: 12/7/2017
+	
+		<h3>Text editor demo</h3>
+		<div class="components-page-white-wysiwyg"></div>
+		<div class="components-page-white-wysiwyg-html hidden">
+			<img alt="Saturn V carrying Apollo 11" style="float: right; margin-left: 10px; border: 1px solid rgb(204, 204, 204); padding: 5px" src="http://c.cksource.com/a/1/img/sample.jpg" />
+			<div style="font-weight: 700; font-size: 48px; text-align: left;">Apollo 11</div> <p><strong>Apollo 11</strong> was the spaceflight that landed the first humans, Americans <a href="http://en.wikipedia.org/wiki/Neil_Armstrong">Neil Armstrong</a> and <a href="http://en.wikipedia.org/wiki/Buzz_Aldrin">Buzz Aldrin</a>, on the Moon on July 20, 1969, at 20:18 UTC. Armstrong became the first to step onto the lunar surface 6 hours later on July 21 at 02:56 UTC.</p>
+			<p>Armstrong spent about <s>three and a half</s> two and a half hours outside the spacecraft, Aldrin slightly less; and together they collected 47.5 pounds (21.5&nbsp;kg) of lunar material for return to Earth. A third member of the mission, <a href="http://en.wikipedia.org/wiki/Michael_Collins_(astronaut)">Michael Collins</a>, piloted the <a href="http://en.wikipedia.org/wiki/Apollo_Command/Service_Module">command</a> spacecraft alone in lunar orbit until <span data-text-variable="armstrong">Armstrong</span> and <span data-text-variable="aldrin">Aldrin</span> returned to it for the trip back to Earth.</p>
+		</div>
+		
+		
+	<div>
+
+	<script type="text/javascript">
+		$('.components-page-white-wysiwyg:first').UIWhiteWYSIWYG({
+			'html': $('.components-page-white-wysiwyg-html:first').html()
+		});
+	</script>
+
+</body>
+
+</html>

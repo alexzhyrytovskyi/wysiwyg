@@ -1,0 +1,201 @@
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+*:before, *:after {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+body, button, input, textarea, select, label, th, td {
+	font: normal 14px 'Open Sans', Verdana, Helvetica, 'sans-serif'
+}
+body {
+	margin: 0;
+	padding: 0;
+}
+table {
+	border-spacing: 0;
+	border-collapse: collapse;
+}
+textarea {
+	resize: none;
+}
+button::-moz-focus-inner {
+	border:0;
+	padding:0;
+}
+.non-selectable {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+.hidden,
+.ui-template {
+	display: none !important;
+	visibility: hidden !important;
+	overflow: hidden !important;
+}
+
+/*======================================================================================================================
+	Buttons
+======================================================================================================================*/
+
+/* Buttons > Blue Button */
+.ui-blue-button {
+	display: inline-block;
+	vertical-align: middle;
+	position: relative;
+	text-transform: uppercase;
+	border: none;
+	padding: 7px 8px;
+	line-height: 22px;
+	border-radius: 2px;
+	transition: background-color .20s linear, opacity .3s linear;
+	-webkit-transition: background-color .20s linear, opacity .3s linear;
+	outline: none;
+	text-decoration: none !important;
+	cursor: pointer;
+	box-sizing: content-box;
+	min-width: 64px;
+	text-align: center;
+	background: #3d67dc;
+	color: #f0f0f0 !important;
+	font-size: 14px;
+}
+.ui-blue-button:hover,
+.ui-blue-button:focus {
+	background-color: #224aba;
+}
+.ui-blue-button:active {
+	top: 1px;
+}
+.ui-blue-button.ui-disabled {
+	cursor: default !important;
+	background-color: #3d67dc !important;
+	top: 0 !important;
+	opacity: 0.25;
+}
+/* END OF: Buttons > Blue Button */
+
+/* Buttons > Gray Button */
+.ui-gray-button {
+	display: inline-block;
+	vertical-align: middle;
+	position: relative;
+	text-transform: uppercase;
+	border: 1px solid #b8b8b8;
+	padding: 6px 8px;
+	line-height: 22px;
+	border-radius: 2px;
+	transition: background-color .20s linear, opacity .3s linear;
+	-webkit-transition: background-color .20s linear, opacity .3s linear;
+	outline: none;
+	text-decoration: none !important;
+	cursor: pointer;
+	box-sizing: content-box;
+	min-width: 64px;
+	text-align: center;
+	background: #eeeeee;
+	color: #212121;
+	font-size: 14px;
+	font-weight: 600;
+}
+.ui-gray-button:hover,
+.ui-gray-button:focus {
+	background-color: #e0e0e0;
+}
+.ui-gray-button:active {
+	top: 1px;
+}
+.ui-gray-button.ui-checked {
+	border-color: #3d67dc;
+	background-color: #dde4f9;
+}
+.ui-gray-button.ui-checked:hover {
+	background-color: #c3d1fc;
+}
+.ui-gray-button.ui-disabled {
+	cursor: default !important;
+	background-color: #eeeeee !important;
+	top: 0 !important;
+	opacity: 0.25;
+}
+/* END OF: Buttons > Gray Button */
+
+/* Buttons > Blue Text Button */
+.ui-blue-text-button {
+	display: inline-block;
+	vertical-align: middle;
+	position: relative;
+	text-transform: uppercase;
+	border: none;
+	padding: 7px 8px;
+	line-height: 22px;
+	text-align: center;
+	background: none;
+	color: #3d67dc;
+	cursor: pointer;
+	border-radius: 2px;
+	transition: background-color .20s linear, opacity .3s linear;
+	-webkit-transition: background-color .20s linear, opacity .3s linear;
+	font-size: 14px;
+	font-weight: 600;
+	outline: none;
+}
+.ui-blue-text-button:hover {
+	background-color: rgba(61, 103, 220, 0.15);
+}
+.ui-blue-text-button:active {
+	top: 1px;
+}
+.ui-blue-text-button.ui-disabled {
+	cursor: default !important;
+	background-color: transparent !important;
+	top: 0 !important;
+	opacity: 0.25;
+}
+/* END OF: Buttons > Blue Text Button */
+
+/* Buttons > Gray Text Button */
+.ui-gray-text-button {
+	display: inline-block;
+	vertical-align: middle;
+	position: relative;
+	text-transform: uppercase;
+	border: none;
+	padding: 7px 8px;
+	line-height: 22px;
+	text-align: center;
+	background: none;
+	color: #9e9e9e !important;
+	cursor: pointer;
+	border-radius: 2px;
+	transition: background-color .20s linear, opacity .3s linear;
+	-webkit-transition: background-color .20s linear, opacity .3s linear;
+	font-size: 14px;
+	font-weight: 600;
+	outline: none;
+}
+.ui-gray-text-button:hover,
+.ui-gray-text-button:focus {
+	background-color: rgba(0, 0, 0, 0.15);
+}
+.ui-gray-text-button:active {
+	top: 1px;
+}
+.ui-gray-text-button.ui-disabled {
+	cursor: default !important;
+	background-color: transparent !important;
+	top: 0 !important;
+	opacity: 0.25;
+}
+/* END OF: Buttons > Gray Text Button */
+
+/*======================================================================================================================
+	END OF: Buttons
+======================================================================================================================*/
